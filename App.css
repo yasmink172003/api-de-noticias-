@@ -1,0 +1,80 @@
+/* Estiliza o elemento com id="root"
+   Normalmente é a div principal do React */
+#root {
+
+  /* Define largura máxima da aplicação */
+  max-width: 1280px;
+
+  /* Centraliza horizontalmente (margin auto esquerda/direita) */
+  margin: 0 auto;
+
+  /* Espaçamento interno */
+  padding: 2rem;
+
+  /* Centraliza o texto */
+  text-align: center;
+}
+
+/* Classe usada para logos */
+.logo {
+
+  /* Altura do logo */
+  height: 6em;
+
+  /* Espaçamento interno */
+  padding: 1.5em;
+
+  /* Diz ao navegador que o filter pode mudar
+     (melhora performance da animação) */
+  will-change: filter;
+
+  /* Transição suave quando o filter mudar */
+  transition: filter 300ms;
+}
+/* Quando passar o mouse em cima do logo */
+.logo:hover {
+
+  /* Aplica sombra com efeito neon azul */
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+/* Caso o logo tenha também a classe "react" */
+.logo.react:hover {
+
+  /* Aplica sombra azul específica do React */
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+/* Cria animação chamada logo-spin */
+@keyframes logo-spin {
+
+  /* Começa sem rotação */
+  from {
+    transform: rotate(0deg);
+  }
+
+  /* Termina girando 360 graus */
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* Verifica se o usuário NÃO ativou modo de redução de animações */
+@media (prefers-reduced-motion: no-preference) {
+
+  /* Seleciona o segundo link <a> da página que tenha .logo dentro */
+  a:nth-of-type(2) .logo {
+
+    /* Aplica a animação criada */
+    animation: logo-spin infinite 20s linear;
+  }
+}
+/* Estilo para cards */
+.card {
+
+  /* Espaçamento interno */
+  padding: 2em;
+}
+/* Classe geralmente usada para textos pequenos de documentação */
+.read-the-docs {
+
+  /* Cor cinza clara */
+  color: #888;
+}
