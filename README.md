@@ -1,8 +1,4 @@
-# 1️⃣ Inicializa Git
-git init
 
-# 2️⃣ Cria README.md completo
-cat <<EOL > README.md
 # Api-de-noticias
 
 Backend de um portal de notícias utilizando **Fastify**, **Prisma**, **JWT** e **bcrypt**.  
