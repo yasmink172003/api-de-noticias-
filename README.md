@@ -1,3 +1,25 @@
+Criar a pasta do projeto:
+
+mkdir api-de-noticias
+cd api-de-noticias
+
+Inicializar o Node.js:
+
+npm init -y
+
+Instalar o Fastify e outras dependências
+npm install fastify fastify-cors fastify-jwt bcrypt prisma @prisma/client
+
+Instalar o prima como dev:
+npx prisma init
+
+criar o banco:
+npx prisma migrate dev --name init
+
+Criar app React
+npx create-react-app client
+cd client
+npm install axios react-router-dom
 
 # Api-de-noticias
 
