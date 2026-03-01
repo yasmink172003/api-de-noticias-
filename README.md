@@ -8,6 +8,7 @@ Este projeto permite criar usuários, autenticar, criar notícias e listar notí
 
 ## 🛠 Tecnologias
 
+- React
 - Node.js
 - Fastify – framework backend rápido
 - Prisma – ORM para banco de dados
