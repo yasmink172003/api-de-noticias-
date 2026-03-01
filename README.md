@@ -1,65 +1,166 @@
-Criar a pasta do projeto:
+# 📰 API de Notícias
 
-mkdir api-de-noticias
+Backend e frontend de um portal de notícias desenvolvido com **Fastify**, **Prisma**, **JWT**, **bcrypt** e **React**.
+
+Este projeto permite:
+
+* Cadastro de usuários
+* Login com autenticação segura
+* Controle de permissões
+* Criação e listagem de notícias
+* Associação de notícias com autor
+
+# 🛠️ Tecnologias Utilizadas
+
+## 🔹 Backend
+
+* Node.js
+* Fastify
+* Prisma ORM
+* JWT (JSON Web Token)
+* bcrypt
+
+## 🔹 Frontend
+
+* React
+* Axios
+* React Router DOM
+
+# 📁 Estrutura do Projeto
+
+```
+api-de-noticias/
+│
+├── prisma/
+│   └── schema.prisma
+│
+├── server.js
+├── package.json
+│
+└── client/
+    ├── src/
+    ├── package.json
+```
+
+# 🚀 Como Executar o Projeto
+
+## 1️⃣ Clonar o repositório
+
+```bash
+git clone <url-do-repositorio>
 cd api-de-noticias
+```
 
-Inicializar o Node.js:
+## 2️⃣ Instalar dependências do backend
 
-npm init -y
+```bash
+npm install
+```
 
-Instalar o Fastify e outras dependências
-npm install fastify fastify-cors fastify-jwt bcrypt prisma @prisma/client
+## 3️⃣ Configurar o Prisma
 
-Instalar o prima como dev:
+Inicializar:
+
+```bash
 npx prisma init
+```
 
-criar o banco:
+Rodar migrations:
+
+```bash
 npx prisma migrate dev --name init
+```
 
-Criar app React
-npx create-react-app client
+Isso criará o banco de dados automaticamente.
+
+---
+
+## 4️⃣ Rodar o backend
+
+```bash
+node server.js
+```
+
+Servidor rodando em:
+
+```
+http://localhost:3001
+```
+
+## 5️⃣ Instalar e rodar o frontend
+
+```bash
 cd client
-npm install axios react-router-dom
+npm install
+npm start
+```
 
-# Api-de-noticias
+Frontend rodando em:
 
-Backend de um portal de notícias utilizando **Fastify**, **Prisma**, **JWT** e **bcrypt**.  
-Este projeto permite criar usuários, autenticar, criar notícias e listar notícias com informações do autor.
+```
+http://localhost:3000
+```
 
----
+# Autenticação JWT
 
-## 🛠 Tecnologias
+Após fazer login, o sistema retorna um **token JWT**.
 
-- React
-- Node.js
-- Fastify – framework backend rápido
-- Prisma – ORM para banco de dados
-- JWT – autenticação baseada em token
-- bcrypt – hash de senhas
+Esse token deve ser enviado no header das rotas protegidas:
 
----
-
-## 🚀 Funcionalidades
-
-- Cadastro de usuários com senha criptografada
-- Login com autenticação JWT
-- Middleware \`auth\` para proteger rotas privadas
-- Middleware \`adminOnly\` para limitar acesso a administradores
-- CRUD básico de notícias (criação e leitura)
-- Notícias vinculadas ao autor
-
-
-## 🔐 Autenticação JWT
-
-- Após login, você recebe um token JWT  
-- Inclua no header das rotas protegidas:
-\`\`\`
+```
 Authorization: Bearer SEU_TOKEN
-\`\`\`
-- Middleware \`auth\` protege rotas  
-- Middleware \`adminOnly\` limita acesso a admins  
+```
 
----
 
-#👩🏻Autora 
-Yasmin Karolayne
+## Middlewares
+
+### `auth`
+
+* Verifica se o token é válido
+* Protege rotas privadas
+
+### `adminOnly`
+
+* Permite acesso apenas para usuários com role `ADMIN`
+
+
+# Funcionalidades
+
+## Usuários
+
+* Criar usuário
+* Login com senha criptografada
+* Definição de permissões (USER, EDITOR, ADMIN)
+
+## Notícias
+
+* Criar notícia (EDITOR ou ADMIN)
+* Listar todas as notícias
+* Visualizar notícia específica
+* Notícias vinculadas ao autor
+
+
+
+# Conceitos Aplicados
+
+* Arquitetura REST
+* Autenticação baseada em token
+* Controle de permissões por role
+* Relacionamento entre tabelas no banco
+* Organização backend + frontend separados
+
+#  Melhorias Futuras
+
+* CRUD completo de notícias (update e delete)
+* Upload de imagens
+* Paginação
+* Deploy em produção
+* Testes automatizados
+
+
+# 👩🏻‍💻 Autora
+
+**Yasmin Karolayne**
+
+Projeto desenvolvido para fins de estudo e prática em desenvolvimento Full Stack 🚀
+
